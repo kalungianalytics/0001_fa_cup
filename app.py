@@ -17,7 +17,7 @@ st.markdown(
             height: 100%;
         }
         .streamlit-container {
-            max-width: 1200px;  /* Maximum width of the content */
+            max-width: 1000px;  /* Maximum width of the content */
             margin: 0 auto;  /* Center content */
         }
         /* Hide mobile viewport settings */
