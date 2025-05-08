@@ -9,14 +9,20 @@ st.markdown(
     """
     <style>
     @media screen and (max-width: 768px) {
+        /* Force desktop mode on mobile */
         body {
-            transform: rotate(90deg);
-            transform-origin: top left;
-            height: 100vh;
-            overflow: hidden;
+            width: 100vw;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            height: 100%;
         }
-        .streamlit-expanderHeader {
-            display: none;
+        .streamlit-container {
+            max-width: 1200px;  /* Maximum width of the content */
+            margin: 0 auto;  /* Center content */
+        }
+        /* Hide mobile viewport settings */
+        meta[name="viewport"] {
+            content: width=1200px;  /* Force content to desktop size */
         }
     }
     </style>
