@@ -170,14 +170,14 @@ fig.update_layout(
     title=dict(
         text=build_title_text("Man City"),
         font=dict(family="Arial", size=24, color="white"),
-        x=0.01,  # moves the title slightly right (0 is far left, 0.5 is center)
+        x=0.02,  # moves the title slightly right (0 is far left, 0.5 is center)
         xanchor="left",
         pad=dict(t=10, b=10)  # top and bottom padding
         ),
     xaxis_title="", plot_bgcolor="#2b2b2b", paper_bgcolor="#2b2b2b", font=dict(color="white"),
     xaxis=dict(showgrid=False, zeroline=False),
     yaxis=dict(range=[-5, all_max_points + 5], showgrid=False, zeroline=False),
-    width=1000, height=600, margin=dict(l=60, r=20, t=100, b=40),
+    width=950, height=570, margin=dict(l=70, r=20, t=100, b=40),
     updatemenus=[
         dict(
             type="buttons", direction="right", x=1.02, xanchor="right", y=1.2, yanchor="top",
