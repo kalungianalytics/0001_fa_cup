@@ -195,4 +195,4 @@ fig.update_layout(
 
 # ==== Streamlit Display ====
 st.set_page_config(layout="wide")
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=False)
