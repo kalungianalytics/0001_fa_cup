@@ -167,8 +167,9 @@ for team in team_data:
 all_max_points = max(team_data[team]["Points"].max() for team in team_data)
 fig.update_layout(
     template='plotly_dark',
-    title=dict(text=build_title_text("Man City"), font=dict(family="Arial", size=24, color="white")),x=0.01, xanchor="left",
-    pad=dict(t=10, b=10)  # top and bottom padding,
+    title=dict(text=build_title_text("Man City"), font=dict(family="Arial", size=24, color="white"),
+            x=0.01, xanchor="left", pad=dict(t=10, b=10)
+               )
     xaxis_title="", plot_bgcolor="#2b2b2b", paper_bgcolor="#2b2b2b", font=dict(color="white"),
     xaxis=dict(showgrid=False, zeroline=False),
     yaxis=dict(range=[-5, all_max_points + 5], showgrid=False, zeroline=False),
