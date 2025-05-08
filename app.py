@@ -17,12 +17,12 @@ st.markdown(
             height: 100%;
         }
         .streamlit-container {
-            max-width: 1000px;  /* Maximum width of the content */
+            max-width: 800px;  /* Maximum width of the content */
             margin: 0 auto;  /* Center content */
         }
         /* Hide mobile viewport settings */
         meta[name="viewport"] {
-            content: width=1200px;  /* Force content to desktop size */
+            content: width=800px;  /* Force content to desktop size */
         }
     }
     </style>
