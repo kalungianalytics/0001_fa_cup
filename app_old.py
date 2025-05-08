@@ -41,7 +41,30 @@ result_styles = {
     "Draw": {"color": "grey", "text": "D"},
     "Defeat": {"color": "red", "text": "L"},
 }
-
+'''
+team_annotations = {
+    "Crystal Palace": {
+        "shapes": [
+            dict(type="rect", xref="x", yref="paper", x0=1, x1=8, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0)),
+            dict(type="rect", xref="x", yref="paper", x0=12, x1=28, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0))
+        ],
+        "annotations": [
+            dict(x=1.6, y=55, text="<i>No wins</i> in the first<br><b><span style='color:#e07a5f'>nine</span></b> games", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="left", yanchor="middle"),
+            dict(x=13.35, y=55, text="A run of 17 games with <b><span style='color:#81b29a'>just 3 defeats</span></b><br>transformed Palace’s season.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="left", yanchor="middle")
+        ]
+    },
+    "Man City": {
+        "shapes": [
+            dict(type="rect", xref="x", yref="paper", x0=10, x1=18, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0)),
+            dict(type="rect", xref="x", yref="paper", x0=1, x1=9, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0))
+        ],
+        "annotations": [
+            dict(x=1.4, y=55, text="<i>Seven wins</i> in the first <br><b><span style='color:#81b29a'>nine</span></b> games set City<br>off to a flying start", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="left", yanchor="middle"),
+            dict(x=10.6, y=55, text="Just <i>one win</i> and<br> <b><span style='color:#e07a5f'>six </span></b>defeats in the<br> next <b><span style='color:#e07a5f'>nine </span></b>games <br>turned City's season<br> upside down.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="left", yanchor="middle")
+        ]
+    }
+}
+'''
 team_annotations = {
     "Crystal Palace": {
         "shapes": [
