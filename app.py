@@ -4,6 +4,26 @@ import pandas as pd
 import plotly.graph_objects as go
 import base64
 
+# ==== force landscape orientation on mobile ====
+st.markdown(
+    """
+    <style>
+    @media screen and (max-width: 768px) {
+        body {
+            transform: rotate(90deg);
+            transform-origin: top left;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .streamlit-expanderHeader {
+            display: none;
+        }
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # ==== Load & Filter Data ====
 df = pd.read_csv("premier_league_standings.csv")
 df = df.drop(columns=['GoalsFor', 'GoalsAgainst', 'GoalDifference'])
