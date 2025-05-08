@@ -24,12 +24,12 @@ def encode_logo(file_path):
 
 team_logos = {
     "Crystal Palace": {
-        "img": encode_logo("crystal_palace_logo.png"),
+        "img": encode_logo("images\crystal_palace_logo.png"),
         "sizex": 5,
         "sizey": 25
     },
     "Man City": {
-        "img": encode_logo("man_city_logo.png"),
+        "img": encode_logo("images\man_city_logo.png"),
         "sizex": 6,
         "sizey": 30
     }
