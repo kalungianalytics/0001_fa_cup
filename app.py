@@ -26,7 +26,7 @@ mobile_warning = """
       📱 For the best experience on mobile, please enable <b>'Desktop site'</b> in your browser.
     </div>
     <script>
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 500) {
         document.getElementById("mobile-warning").style.display = "none";
       }
     </script>
