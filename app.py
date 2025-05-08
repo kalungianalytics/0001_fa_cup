@@ -7,23 +7,27 @@ import streamlit.components.v1 as components
 
 # JavaScript that detects small screens and shows a message
 mobile_warning = """
+<div id="mobile-warning"></div>
 <script>
-const isMobile = window.innerWidth < 768;
-if (isMobile) {
-    const warningDiv = document.createElement('div');
-    warningDiv.style.backgroundColor = '#fff3cd';
-    warningDiv.style.border = '1px solid #ffeeba';
-    warningDiv.style.padding = '10px';
-    warningDiv.style.borderRadius = '5px';
-    warningDiv.style.marginBottom = '15px';
-    warningDiv.innerHTML = "📱 For the best experience on mobile, please enable 'Desktop site' in your browser.";
-    document.body.prepend(warningDiv);
-}
+  const isMobile = window.innerWidth < 768;
+  if (isMobile) {
+    document.getElementById("mobile-warning").innerHTML = `
+      <div style="
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        font-family: sans-serif;
+        color: #856404;
+        ">
+        📱 For the best experience on mobile, please enable <b>'Desktop site'</b> in your browser.
+      </div>
+    `;
+  }
 </script>
 """
-
-# Inject the JavaScript
-components.html(mobile_warning, height=0, scrolling=False)
+components.html(mobile_warning, height=80, scrolling=False)
 
 # ==== Load & Filter Data ====
 df = pd.read_csv("premier_league_standings.csv")
