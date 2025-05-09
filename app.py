@@ -213,7 +213,7 @@ with center:
     st.warning("📱 For best experience, rotate your phone to **landscape** or use your browser’s **Desktop Site** mode.")
 
 # Center the chart using Streamlit columns
-left, main, right = st.columns([0.1, 16, 0.1])
+left, main, right = st.columns([0.1, 50, 0.1])
 with main:
     st.markdown("<div style='max-width: 1000px; margin: auto;'>", unsafe_allow_html=True)
     st.plotly_chart(fig, use_container_width=True)
