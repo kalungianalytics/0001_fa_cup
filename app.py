@@ -50,7 +50,6 @@ team_annotations = {
             dict(type="rect", xref="x", yref="paper", x0=12, x1=28, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0))
         ],
         "annotations": [
-            # Adjusted annotation - centered text
             dict(x=1 + (8-1)/2, y=55, text="<i>No wins</i> in the first<br><b><span style='color:#e07a5f'>nine</span></b> games", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="middle"),
             dict(x=13 + (28-13)/2, y=55, text="A run of 17 games with <b><span style='color:#81b29a'>just 3 defeats</span></b><br>transformed Palace’s season.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="middle")
         ]
@@ -149,7 +148,7 @@ for team in team_data:
     buttons.append(dict(
         label=display_names[team],
         method="update",
-        args=[
+        args=[ 
             {"visible": make_visibility(team)},
             {
                 "title.text": build_title_text(team),
@@ -180,7 +179,7 @@ fig.update_layout(
     xaxis=dict(showgrid=False, zeroline=False),
     yaxis=dict(range=[-5, all_max_points + 5], showgrid=False, zeroline=False),
     width=950, height=570, margin=dict(l=70, r=20, t=100, b=40),
-    updatemenus=[
+    updatemenus=[ 
         dict(
             type="buttons", direction="right", x=1.02, xanchor="right", y=1.2, yanchor="top",
             buttons=buttons, showactive=True,
@@ -202,6 +201,15 @@ fig.update_layout(
 )
 
 # ==== Streamlit Display ====
-#st.set_page_config(layout="centered")
+# Default to wide layout
 st.set_page_config(layout="wide")
-st.plotly_chart(fig, use_container_width=True)
+
+# Warning for all screen types
+left, center, right = st.columns([1, 4, 1])
+with center:
+    st.warning("📱 For best experience, rotate your phone to **landscape** or use your browser’s **Desktop Site** mode.")
+
+# Center the chart using Streamlit columns
+left, main, right = st.columns([0.1, 16, 0.1])
+with main:
+    st.plotly_chart(fig, use_container_width=False)
