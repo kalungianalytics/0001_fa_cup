@@ -68,7 +68,7 @@ team_annotations = {
 
 team_summary_text = {
     "Crystal Palace": "<b>Summary:</b> Most fans will be thrilled by a cup final appearance but will rue the poor home form and slow start to the season.",
-    "Man City": "<b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed.  <br><b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes",
+    "Man City": "<b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed.<br><b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes",
 }
 
 # ==== Helpers ====
