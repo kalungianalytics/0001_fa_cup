@@ -179,8 +179,7 @@ fig.update_layout(
     xaxis_title="", plot_bgcolor="#2b2b2b", paper_bgcolor="#2b2b2b", font=dict(color="white"),
     xaxis=dict(showgrid=False, zeroline=False),
     yaxis=dict(range=[-5, all_max_points + 5], showgrid=False, zeroline=False),
-    autosize=True, width=None, height=570, margin=dict(l=70, r=20, t=100, b=40),
-    #width=950, height=570, margin=dict(l=70, r=20, t=100, b=40),
+    width=950, height=570, margin=dict(l=70, r=20, t=100, b=40),
     updatemenus=[
         dict(
             type="buttons", direction="right", x=1.02, xanchor="right", y=1.2, yanchor="top",
@@ -203,20 +202,6 @@ fig.update_layout(
 )
 
 # ==== Streamlit Display ====
-#st.set_page_config(layout="centered")
+st.set_page_config(layout="centered")
 #st.set_page_config(layout="wide")
-#st.plotly_chart(fig, use_container_width=False)
-
-# === Mobile detection & warning ===
-left, center, right = st.columns([1, 4, 1])
-with center:
-    st.warning("📱 For best experience, rotate your phone to **landscape** or use your browser’s **Desktop Site** mode.")
-
-# Center the chart using Streamlit columns
-main, right = st.columns([17, 1])
-with main:
-    st.plotly_chart(fig, use_container_width=False)
-
-#with main:
-    #st.plotly_chart(fig, use_container_width=True)
-    #st.plotly_chart(fig, use_container_width=False)
+st.plotly_chart(fig, use_container_width=False)
