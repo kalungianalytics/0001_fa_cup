@@ -198,4 +198,14 @@ st.set_page_config(layout="wide")  # Set to wide mode by default
 st.markdown("<div style='text-align:center; color: red; font-size: 16px;'>⚠️ Please note: This chart is optimized for wide screens. On mobile devices, the chart may require scrolling.</div>", unsafe_allow_html=True)
 
 # Display the chart
-st.plotly_chart(fig, use_container_width=True)
+#st.plotly_chart(fig, use_container_width=True)
+# Add mobile-friendly horizontal padding with max width
+with st.container():
+    st.markdown(
+        """
+        <div style="padding-left:10px; padding-right:10px; max-width:100%; overflow-x:auto;">
+        """,
+        unsafe_allow_html=True
+    )
+    st.plotly_chart(fig, use_container_width=True)
+    st.markdown("</div>", unsafe_allow_html=True)
