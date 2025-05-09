@@ -195,41 +195,8 @@ fig.update_layout(
 
 # ==== Streamlit Display ====
 st.set_page_config(layout="wide")  # Force wide layout from the start
-import streamlit.components.v1 as components
 
-# Inject a script to detect viewport width and store in a hidden Streamlit input
-components.html("""
-    <script>
-        const streamlitDoc = window.parent.document;
-        function sendSize() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            const sizeInput = streamlitDoc.querySelector('input[data-testid="viewport-size"]');
-            if (!sizeInput) {
-                const el = streamlitDoc.createElement("input");
-                el.setAttribute("type", "hidden");
-                el.setAttribute("data-testid", "viewport-size");
-                el.setAttribute("value", width);
-                streamlitDoc.body.appendChild(el);
-                const evt = new Event("input", { bubbles: true });
-                el.dispatchEvent(evt);
-            } else {
-                sizeInput.value = width;
-                const evt = new Event("input", { bubbles: true });
-                sizeInput.dispatchEvent(evt);
-            }
-        }
-        window.onload = sendSize;
-        window.onresize = sendSize;
-    </script>
-""", height=0)
-
-# Read viewport width
-viewport_width = st.text_input("Hidden Viewport Size", key="viewport-size")
-
-# Show warning if width is too small
-if viewport_width and int(viewport_width) < 800:
-    st.warning("⚠️ This chart is best viewed on a desktop or wider screen.📱 For the best mobile experience, rotate your phone to **landscape mode** or enable **Desktop Site** in your browser menu.")
+st.warning("⚠️ Best viewed on desktop.📱 For the best mobile experience, enable **Desktop Site** in your browser menu and rotate to **landscape**.")
 
 # Center the chart with small padding on both sides (5% left/right, 90% center)
 main_col, right_col = st.columns([0.99, 0.01])
