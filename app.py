@@ -206,41 +206,36 @@ fig.update_layout(
 #st.set_page_config(layout="wide")
 #st.plotly_chart(fig, use_container_width=False)
 
-# ==== Streamlit Display with Mobile-Friendly Handling ====
+# === Mobile detection & warning ===
+import streamlit.components.v1 as components
 
-# Inject JavaScript to detect screen width and pass to Streamlit
+# Inject JS to detect viewport width and send it via Streamlit events
 components.html("""
-    <script>
-        const streamlitDoc = window.parent.document;
-        function sendSize() {
-            const width = window.innerWidth;
-            const input = streamlitDoc.querySelector('input[data-testid="viewport-size"]');
-            if (!input) {
-                const el = streamlitDoc.createElement("input");
-                el.setAttribute("type", "hidden");
-                el.setAttribute("data-testid", "viewport-size");
-                el.setAttribute("id", "viewport-size");
-                el.setAttribute("value", width);
-                streamlitDoc.body.appendChild(el);
-                el.dispatchEvent(new Event("input", { bubbles: true }));
-            } else {
-                input.value = width;
-                input.dispatchEvent(new Event("input", { bubbles: true }));
-            }
+<script>
+    const streamlitDoc = window.parent.document;
+    function updateWidth() {
+        const width = window.innerWidth;
+        const input = streamlitDoc.getElementById("viewport-detect");
+        if (input) {
+            input.value = width;
+            input.dispatchEvent(new Event("input", { bubbles: true }));
         }
-        window.onload = sendSize;
-        window.onresize = sendSize;
-    </script>
+    }
+    window.onload = updateWidth;
+    window.onresize = updateWidth;
+</script>
+<input id="viewport-detect" type="hidden" />
 """, height=0)
 
-# Hidden input to capture the viewport width
-viewport_width = st.text_input("viewport-size", value="", label_visibility="collapsed", key="viewport-size")
+# Hidden Streamlit input to receive the viewport width
+viewport_width = st.text_input("Viewport Width", "", key="viewport-detect", label_visibility="collapsed")
 
-# Show a warning if the screen is too narrow (e.g., mobile portrait)
+# Conditionally show warning
 if viewport_width.isdigit() and int(viewport_width) < 800:
-    st.warning("📱 For best viewing, rotate your phone to **landscape** or enable **Desktop Site** in your browser.")
+    st.warning("📱 Best viewed in **landscape** or using your browser's **Desktop Site** mode.")
 
-# Layout with padding columns
-left, main, right = st.columns([1, 6, 1])
+# Center the chart using Streamlit columns
+left, main, right = st.columns([0.25, 6, 0.25])
 with main:
     st.plotly_chart(fig, use_container_width=False)
+
