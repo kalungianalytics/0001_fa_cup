@@ -194,18 +194,18 @@ fig.update_layout(
 )
 
 # ==== Streamlit Display ====
-st.set_page_config(layout="wide")  # Set to wide mode by default
-st.markdown("<div style='text-align:center; color: red; font-size: 16px;'>⚠️ Please note: This chart is optimized for wide screens. On mobile devices, the chart may require scrolling.</div>", unsafe_allow_html=True)
+st.set_page_config(layout="wide")  # Force wide layout from the start
 
-# Display the chart
-#st.plotly_chart(fig, use_container_width=True)
-# Add mobile-friendly horizontal padding with max width
+# Warning message
+st.markdown(
+    "<div style='text-align:center; color: red; font-size: 16px;'>"
+    "⚠️ Please note: This chart is optimized for wide screens. On mobile devices, the chart may require scrolling."
+    "</div><br>",
+    unsafe_allow_html=True
+)
 
-st.markdown("""
-<div style="margin-left: 0px; margin-right: 200px;">
-""", unsafe_allow_html=True)
-
-st.plotly_chart(fig, use_container_width=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
+# Center the chart with small padding on both sides (5% left/right, 90% center)
+left_col, main_col, right_col = st.columns([0.05, 0.9, 0.05])
+with main_col:
+    st.plotly_chart(fig, use_container_width=False)
 
