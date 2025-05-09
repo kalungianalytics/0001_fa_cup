@@ -122,10 +122,10 @@ def build_team_traces(main_team):
         fig.add_trace(go.Scatter(
             x=subset["Matchweek"], y=subset["Points"], mode="markers+text",
             text=[style["text"]] * len(subset), textposition="middle center",
-            marker=dict(size=20, color=style["color"], symbol="circle", line=dict(width=0.25, color='black'))),
+            marker=dict(size=20, color=style["color"], symbol="circle", line=dict(width=0.25, color='black')),
             name=f"{main_team} {result}",
             showlegend=False, visible=(main_team == "Man City")
-        )
+        ))
         indices.append(len(fig.data) - 1)
 
     team_traces[main_team] = indices
@@ -157,8 +157,8 @@ for team in team_data:
                    xanchor="right", yanchor="bottom", opacity=0.9, layer="above"
                )],
                "shapes": team_annotations[team]["shapes"],
-               "annotations": team_annotations[team]["annotations"]}])
-    )
+               "annotations": team_annotations[team]["annotations"]}]))
+
 # ==== Layout ====
 all_max_points = max(team_data[team]["Points"].max() for team in team_data)
 fig.update_layout(
