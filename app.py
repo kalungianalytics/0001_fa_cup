@@ -74,11 +74,15 @@ team_summary_text = {
 }
 '''
 team_summary_text = {
-    "Crystal Palace": "<b>Summary:</b> Most fans will be thrilled by a cup final appearance but will rue the poor home form and slow start to the season.",
-    "Man City": """
-    <b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed.<br>
-    <span style='line-height:1'><b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes</span>
-    """
+    "Crystal Palace": (
+        "<b>Summary:</b> Most fans will be thrilled by a cup final appearance but will rue the poor home form and slow start to the season."
+    ),
+    "Man City": (
+        "<b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed."
+        "<br><span style='display:inline-block; line-height:1.1'>"
+        "<b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes"
+        "</span>"
+    ),
 }
 
 # ==== Helpers ====
@@ -204,8 +208,6 @@ fig.update_layout(
 )
 
 # ==== Streamlit Display ====
-
-
 st.warning("⚠️ Best viewed on desktop.📱 For the best mobile experience, enable **Desktop Site** in your browser menu and rotate to **landscape**.")
 
 # Center the chart with small padding on both sides (5% left/right, 90% center)
