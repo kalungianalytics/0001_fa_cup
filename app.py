@@ -197,14 +197,7 @@ fig.update_layout(
 st.set_page_config(layout="wide")  # Force wide layout from the start
 
 # Warning message
-st.markdown(
-    """
-    <div style='text-align:center; color: red; font-size: 16px;'>
-    ⚠️ This chart is best viewed on a desktop or wider screen. For full experience, consider emailing this to yourself.
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.warning("⚠️ This chart is best viewed on a desktop or wider screen.📱 For the best mobile experience, rotate your phone to **landscape mode** or enable **Desktop Site** in your browser menu.")
 
 # Center the chart with small padding on both sides (5% left/right, 90% center)
 main_col, right_col = st.columns([0.99, 0.01])
