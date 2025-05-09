@@ -79,7 +79,7 @@ team_summary_text = {
     ),
     "Man City": (
         "<b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed."
-        "<br><b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes"
+        "<b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes"
     ),
 }
 
