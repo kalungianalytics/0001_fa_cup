@@ -203,7 +203,7 @@ st.markdown("<div style='text-align:center; color: red; font-size: 16px;'>⚠️
 with st.container():
     st.markdown(
         """
-        <div style="padding-left:10px; padding-right:10px; max-width:100%; overflow-x:auto;">
+        <div style="padding-left:5px; padding-right:15px; max-width:100%; overflow-x:auto;">
         """,
         unsafe_allow_html=True
     )
