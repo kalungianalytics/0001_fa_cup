@@ -122,10 +122,10 @@ def build_team_traces(main_team):
         fig.add_trace(go.Scatter(
             x=subset["Matchweek"], y=subset["Points"], mode="markers+text",
             text=[style["text"]] * len(subset), textposition="middle center",
-            marker=dict(size=20, color=style["color"], symbol="circle", line=dict(width=0.25, color='black')),
+            marker=dict(size=20, color=style["color"], symbol="circle", line=dict(width=0.25, color='black'))),
             name=f"{main_team} {result}",
             showlegend=False, visible=(main_team == "Man City")
-        ))
+        )
         indices.append(len(fig.data) - 1)
 
     team_traces[main_team] = indices
@@ -148,22 +148,17 @@ for team in team_data:
     buttons.append(dict(
         label=display_names[team],
         method="update",
-        args=[ 
-            {"visible": make_visibility(team)},
-            {
-                "title.text": build_title_text(team),
-                "images": [dict(
-                    source=f"data:image/png;base64,{logo['img']}",
-                    sizex=logo['sizex'], sizey=logo['sizey'],
-                    xref="x", yref="y", x=35, y=2,
-                    xanchor="right", yanchor="bottom", opacity=0.9, layer="above"
-                )],
-                "shapes": team_annotations[team]["shapes"],
-                "annotations": team_annotations[team]["annotations"]
-            }
-        ]
-    ))
-
+        args=[{"visible": make_visibility(team)},
+              {"title.text": build_title_text(team),
+               "images": [dict(
+                   source=f"data:image/png;base64,{logo['img']}",
+                   sizex=logo['sizex'], sizey=logo['sizey'],
+                   xref="x", yref="y", x=35, y=2,
+                   xanchor="right", yanchor="bottom", opacity=0.9, layer="above"
+               )],
+               "shapes": team_annotations[team]["shapes"],
+               "annotations": team_annotations[team]["annotations"]}])
+    )
 # ==== Layout ====
 all_max_points = max(team_data[team]["Points"].max() for team in team_data)
 fig.update_layout(
@@ -171,23 +166,21 @@ fig.update_layout(
     title=dict(
         text=build_title_text("Man City"),
         font=dict(family="Arial", size=24, color="white"),
-        x=0.02,  # moves the title slightly right (0 is far left, 0.5 is center)
+        x=0.02,  
         xanchor="left",
-        pad=dict(t=10, b=10)  # top and bottom padding
+        pad=dict(t=10, b=10)
         ),
     xaxis_title="", plot_bgcolor="#2b2b2b", paper_bgcolor="#2b2b2b", font=dict(color="white"),
     xaxis=dict(showgrid=False, zeroline=False),
     yaxis=dict(range=[-5, all_max_points + 5], showgrid=False, zeroline=False),
     width=950, height=570, margin=dict(l=70, r=20, t=100, b=40),
-    updatemenus=[ 
-        dict(
-            type="buttons", direction="right", x=1.02, xanchor="right", y=1.2, yanchor="top",
-            buttons=buttons, showactive=True,
-            bgcolor="#444", font=dict(color="grey"),
-            bordercolor="white", borderwidth=1,
-            pad={"r": 10, "t": 10}
-        )
-    ],
+    updatemenus=[dict(
+        type="buttons", direction="right", x=1.02, xanchor="right", y=1.2, yanchor="top",
+        buttons=buttons, showactive=True,
+        bgcolor="#444", font=dict(color="grey"),
+        bordercolor="white", borderwidth=1,
+        pad={"r": 10, "t": 10}
+    )],
     images=[dict(
         source=f"data:image/png;base64,{team_logos['Man City']['img']}",
         xref="x", yref="y", x=35, y=2,
@@ -201,15 +194,8 @@ fig.update_layout(
 )
 
 # ==== Streamlit Display ====
-# Default to wide layout
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")  # Set to wide mode by default
+st.markdown("<div style='text-align:center; color: red; font-size: 16px;'>⚠️ Please note: This chart is optimized for wide screens. On mobile devices, the chart may require scrolling.</div>", unsafe_allow_html=True)
 
-# Warning for all screen types
-left, center, right = st.columns([1, 4, 1])
-with center:
-    st.warning("📱 For best experience, rotate your phone to **landscape** or use your browser’s **Desktop Site** mode.")
-
-# Center the chart using Streamlit columns
-left, main, right = st.columns([0.1, 16, 0.1])
-with main:
-    st.plotly_chart(fig, use_container_width=False)
+# Display the chart
+st.plotly_chart(fig, use_container_width=True)
