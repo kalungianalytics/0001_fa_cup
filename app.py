@@ -207,35 +207,12 @@ fig.update_layout(
 #st.plotly_chart(fig, use_container_width=False)
 
 # === Mobile detection & warning ===
-import streamlit.components.v1 as components
-
-# Inject JS to detect viewport width and send it via Streamlit events
-components.html("""
-<script>
-    const streamlitDoc = window.parent.document;
-    function updateWidth() {
-        const width = window.innerWidth;
-        const input = streamlitDoc.getElementById("viewport-detect");
-        if (input) {
-            input.value = width;
-            input.dispatchEvent(new Event("input", { bubbles: true }));
-        }
-    }
-    window.onload = updateWidth;
-    window.onresize = updateWidth;
-</script>
-<input id="viewport-detect" type="hidden" />
-""", height=0)
-
-# Hidden Streamlit input to receive the viewport width
-viewport_width = st.text_input("Viewport Width", "", key="viewport-detect", label_visibility="collapsed")
-
-# Conditionally show warning
-if viewport_width.isdigit() and int(viewport_width) < 800:
-    st.warning("📱 Best viewed in **landscape** or using your browser's **Desktop Site** mode.")
+left, center, right = st.columns([1, 4, 1])
+with center:
+    st.warning("📱 For best experience, rotate your phone to **landscape** or use your browser’s **Desktop Site** mode.")
 
 # Center the chart using Streamlit columns
-left, main, right = st.columns([0.25, 6, 0.25])
+left, main, right = st.columns([0.25, 8, 0.25])
 with main:
     st.plotly_chart(fig, use_container_width=False)
 
