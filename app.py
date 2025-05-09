@@ -1,9 +1,10 @@
+# [Modified Streamlit App with Enhancements]
+
 # ==== Import Libraries ====
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 import base64
-import streamlit.components.v1 as components
 
 # ==== Load & Filter Data ====
 df = pd.read_csv("premier_league_standings.csv")
@@ -50,8 +51,8 @@ team_annotations = {
             dict(type="rect", xref="x", yref="paper", x0=12, x1=28, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0))
         ],
         "annotations": [
-            dict(x=1 + (8-1)/2, y=55, text="<i>No wins</i> in the first<br><b><span style='color:#e07a5f'>nine</span></b> games", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="middle"),
-            dict(x=13 + (28-13)/2, y=55, text="A run of 17 games with <b><span style='color:#81b29a'>just 3 defeats</span></b><br>transformed Palace’s season.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="middle")
+            dict(x=4.5, y=1.05, yref="paper", text="<i>No wins</i> in the first<br><b><span style='color:#e07a5f'>nine</span></b> games", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom"),
+            dict(x=20.5, y=1.05, yref="paper", text="A run of 17 games with <b><span style='color:#81b29a'>just 3 defeats</span></b><br>transformed Palace’s season.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom")
         ]
     },
     "Man City": {
@@ -60,8 +61,8 @@ team_annotations = {
             dict(type="rect", xref="x", yref="paper", x0=1, x1=9, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0))
         ],
         "annotations": [
-            dict(x=1 + (9-1)/2, y=55, text="<i>Seven wins</i> in the first <br><b><span style='color:#81b29a'>nine</span></b> games set City<br>off to a flying start", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="middle"),
-            dict(x=10 + (18-10)/2, y=55, text="Just <i>one win</i> and<br> <b><span style='color:#e07a5f'>six </span></b>defeats in the<br> next <b><span style='color:#e07a5f'>nine </span></b>games <br>turned City's season<br> upside down.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="middle")
+            dict(x=5, y=1.05, yref="paper", text="<i>Seven wins</i> in the first <br><b><span style='color:#81b29a'>nine</span></b> games set City<br>off to a flying start", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom"),
+            dict(x=14, y=1.05, yref="paper", text="Just <i>one win</i> and<br> <b><span style='color:#e07a5f'>six </span></b>defeats in the<br> next <b><span style='color:#e07a5f'>nine </span></b>games <br>turned City's season<br> upside down.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom")
         ]
     }
 }
@@ -87,7 +88,6 @@ def build_title_text(team):
         f"<b>{display_names[team]}</b> – "
         f"<span style='font-size: 16px;'>Position: {position} | "
         f"{total_points} Pts, {counts.get('Win', 0)} Wins, {counts.get('Draw', 0)} Draws, {counts.get('Defeat', 0)} Defeats</span>"
-        f"<br><span style='font-size:14px; color:lightgrey;'>{team_summary_text[team]}</span>"
     )
 
 # ==== Chart Prep ====
@@ -194,18 +194,26 @@ fig.update_layout(
 )
 
 # ==== Streamlit Display ====
-st.set_page_config(layout="wide")  # Force wide layout from the start
+st.set_page_config(layout="wide")
 
-# Warning message
 st.markdown(
-    "<div style='text-align:center; color: red; font-size: 16px;'>"
-    "⚠️ Please note: This chart is optimized for wide screens. On mobile devices, the chart may require scrolling."
-    "</div><br>",
+    """
+    <div style='text-align:center; color: red; font-size: 16px;'>
+    ⚠️ This chart is best viewed on a desktop or wider screen. For full experience, consider emailing this to yourself.
+    </div><br>
+    <a href="mailto:?subject=Check out this Premier League analysis&body=Best viewed on desktop: https://your-app-link" target="_blank">
+    <button style="background-color:#444;color:white;padding:10px;border:none;border-radius:5px;">Email this to yourself</button>
+    </a>
+    <br><br>
+    """,
     unsafe_allow_html=True
 )
 
-# Center the chart with small padding on both sides (5% left/right, 90% center)
 main_col, right_col = st.columns([0.99, 0.01])
 with main_col:
     st.plotly_chart(fig, use_container_width=False)
+
+# Show dynamic summary below chart
+default_team = "Man City"
+st.markdown(f"<div style='text-align:center; font-size:16px; color:white;'>{team_summary_text[default_team]}</div>", unsafe_allow_html=True)
 
