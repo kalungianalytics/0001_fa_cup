@@ -205,7 +205,7 @@ st.markdown(
 )
 
 # Center the chart with small padding on both sides (5% left/right, 90% center)
-left_col, main_col, right_col = st.columns([0.03, 0.94, 0.03])
+left_col, main_col, right_col = st.columns([0.00, 0.95, 0.05])
 with main_col:
     st.plotly_chart(fig, use_container_width=False)
 
