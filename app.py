@@ -179,7 +179,8 @@ fig.update_layout(
     xaxis_title="", plot_bgcolor="#2b2b2b", paper_bgcolor="#2b2b2b", font=dict(color="white"),
     xaxis=dict(showgrid=False, zeroline=False),
     yaxis=dict(range=[-5, all_max_points + 5], showgrid=False, zeroline=False),
-    width=950, height=570, margin=dict(l=70, r=20, t=100, b=40),
+    autosize=True, width=None, height=570, margin=dict(l=70, r=20, t=100, b=40),
+    #width=950, height=570, margin=dict(l=70, r=20, t=100, b=40),
     updatemenus=[
         dict(
             type="buttons", direction="right", x=1.02, xanchor="right", y=1.2, yanchor="top",
@@ -214,5 +215,9 @@ with center:
 # Center the chart using Streamlit columns
 left, main, right = st.columns([0.1, 16, 0.1])
 with main:
-    st.plotly_chart(fig, use_container_width=False)
-
+    st.markdown("<div style='max-width: 1000px; margin: auto;'>", unsafe_allow_html=True)
+    st.plotly_chart(fig, use_container_width=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+#with main:
+    #st.plotly_chart(fig, use_container_width=True)
+    #st.plotly_chart(fig, use_container_width=False)
