@@ -79,11 +79,10 @@ team_summary_text = {
     ),
     "Man City": (
         "<b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed."
-        "<br><span style='display:inline-block; line-height:0.75'>"
-        "<b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes"
-        "</span>"
+        "<br><b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes"
     ),
 }
+
 
 # ==== Helpers ====
 def get_team_position(df, team_name):
@@ -99,9 +98,9 @@ def build_title_text(team):
 
     return (
         f"<b>{display_names[team]}</b> – "
-        f"<span style='font-size: 16px;'>Position: {position} | "
-        f"{total_points} Pts, {counts.get('Win', 0)} Wins, {counts.get('Draw', 0)} Draws, {counts.get('Defeat', 0)} Defeats</span>"
-        f"<br><span style='font-size:14px; color:lightgrey;line-height:0.75'>{team_summary_text[team]}</span>"
+        f"Position: {position} | "
+        f"{total_points} Pts, {counts.get('Win', 0)} Wins, {counts.get('Draw', 0)} Draws, {counts.get('Defeat', 0)} Defeats"
+        f"<br>{team_summary_text[team]}"
     )
 
 # ==== Chart Prep ====
