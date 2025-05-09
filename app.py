@@ -202,6 +202,46 @@ fig.update_layout(
 )
 
 # ==== Streamlit Display ====
-st.set_page_config(layout="centered")
+#st.set_page_config(layout="centered")
 #st.set_page_config(layout="wide")
-st.plotly_chart(fig, use_container_width=False)
+#st.plotly_chart(fig, use_container_width=False)
+
+# ==== Streamlit Display with Mobile-Friendly Handling ====
+
+# Inject JS to detect viewport width
+components.html("""
+    <script>
+        const streamlitDoc = window.parent.document;
+        function sendSize() {
+            const width = window.innerWidth;
+            const sizeInput = streamlitDoc.querySelector('input[data-testid="viewport-size"]');
+            if (!sizeInput) {
+                const el = streamlitDoc.createElement("input");
+                el.setAttribute("type", "hidden");
+                el.setAttribute("data-testid", "viewport-size");
+                el.setAttribute("value", width);
+                streamlitDoc.body.appendChild(el);
+                const evt = new Event("input", { bubbles: true });
+                el.dispatchEvent(evt);
+            } else {
+                sizeInput.value = width;
+                const evt = new Event("input", { bubbles: true });
+                sizeInput.dispatchEvent(evt);
+            }
+        }
+        window.onload = sendSize;
+        window.onresize = sendSize;
+    </script>
+""", height=0)
+
+# Read screen width
+viewport_width = st.text_input("Hidden Viewport Size", key="viewport-size")
+
+# Show warning if on mobile
+if viewport_width and int(viewport_width) < 800:
+    st.warning("📱 For best viewing, rotate your phone to **landscape** or enable **Desktop Site** from your browser settings.")
+
+# Center the chart using columns and constrain max width
+left, main, right = st.columns([1, 6, 1])
+with main:
+    st.plotly_chart(fig, use_container_width=False)  # keep fixed width
