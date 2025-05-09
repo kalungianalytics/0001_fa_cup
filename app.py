@@ -51,8 +51,8 @@ team_annotations = {
             dict(type="rect", xref="x", yref="paper", x0=12, x1=28, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0))
         ],
         "annotations": [
-            dict(x=4.5, y=1.05, yref="paper", text="<i>No wins</i> in the first<br><b><span style='color:#e07a5f'>nine</span></b> games", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom"),
-            dict(x=20.5, y=1.05, yref="paper", text="A run of 17 games with <b><span style='color:#81b29a'>just 3 defeats</span></b><br>transformed Palace’s season.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom")
+            dict(x=4.5, y=55, yref="paper", text="<i>No wins</i> in the first<br><b><span style='color:#e07a5f'>nine</span></b> games", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom"),
+            dict(x=20.5, y=55, yref="paper", text="A run of 17 games with <b><span style='color:#81b29a'>just 3 defeats</span></b><br>transformed Palace’s season.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom")
         ]
     },
     "Man City": {
@@ -61,8 +61,8 @@ team_annotations = {
             dict(type="rect", xref="x", yref="paper", x0=1, x1=9, y0=0, y1=1, fillcolor="rgba(200, 200, 200, 0.1)", line=dict(width=0))
         ],
         "annotations": [
-            dict(x=5, y=1.05, yref="paper", text="<i>Seven wins</i> in the first <br><b><span style='color:#81b29a'>nine</span></b> games set City<br>off to a flying start", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom"),
-            dict(x=14, y=1.05, yref="paper", text="Just <i>one win</i> and<br> <b><span style='color:#e07a5f'>six </span></b>defeats in the<br> next <b><span style='color:#e07a5f'>nine </span></b>games <br>turned City's season<br> upside down.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom")
+            dict(x=5, y=55, yref="paper", text="<i>Seven wins</i> in the first <br><b><span style='color:#81b29a'>nine</span></b> games set City<br>off to a flying start", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom"),
+            dict(x=14, y=55, yref="paper", text="Just <i>one win</i> and<br> <b><span style='color:#e07a5f'>six </span></b>defeats in the<br> next <b><span style='color:#e07a5f'>nine </span></b>games <br>turned City's season<br> upside down.", showarrow=False, font=dict(color="white", size=14), align="center", xanchor="center", yanchor="bottom")
         ]
     }
 }
@@ -215,5 +215,5 @@ with main_col:
 
 # Show dynamic summary below chart
 default_team = "Man City"
-st.markdown(f"<div style='text-align:center; font-size:16px; color:white;'>{team_summary_text[default_team]}</div>", unsafe_allow_html=True)
+st.markdown(f"<div style='text-align:left; font-size:16px; color:white;'>{team_summary_text[default_team]}</div>", unsafe_allow_html=True)
 
