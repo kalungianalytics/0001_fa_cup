@@ -5,6 +5,8 @@ import plotly.graph_objects as go
 import base64
 import streamlit.components.v1 as components
 
+st.set_page_config(layout="wide")  # Force wide layout from the start
+
 # ==== Load & Filter Data ====
 df = pd.read_csv("premier_league_standings.csv")
 df = df.drop(columns=['GoalsFor', 'GoalsAgainst', 'GoalDifference'])
@@ -72,10 +74,11 @@ team_summary_text = {
 }
 '''
 team_summary_text = {
-    "Crystal Palace": "<b>Summary:</b> Most fans will be thrilled by a cup final appearance but will rue the poor home form and slow start to the season.",
-    "Man City": "<b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed.<span style='display:block; line-height:1;'><b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes</span>",
+    "Man City": """
+    <b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed.<br>
+    <span style='line-height:1'><b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes</span>
+    """
 }
-
 
 # ==== Helpers ====
 def get_team_position(df, team_name):
@@ -200,7 +203,7 @@ fig.update_layout(
 )
 
 # ==== Streamlit Display ====
-st.set_page_config(layout="wide")  # Force wide layout from the start
+
 
 st.warning("⚠️ Best viewed on desktop.📱 For the best mobile experience, enable **Desktop Site** in your browser menu and rotate to **landscape**.")
 
