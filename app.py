@@ -202,7 +202,7 @@ st.markdown("<div style='text-align:center; color: red; font-size: 16px;'>⚠️
 # Add mobile-friendly horizontal padding with max width
 with st.container():
     st.markdown("""
-    <div style="margin-left: 0px; margin-right: 100px;">
+    <div style="margin-left: 0px; margin-right: 200px;">
     """, unsafe_allow_html=True)
 
     st.plotly_chart(fig, use_container_width=True)
