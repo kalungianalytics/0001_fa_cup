@@ -208,24 +208,24 @@ fig.update_layout(
 
 # ==== Streamlit Display with Mobile-Friendly Handling ====
 
-# Inject JS to detect viewport width (and pass to Streamlit silently)
+# Inject JavaScript to detect screen width and pass to Streamlit
 components.html("""
     <script>
         const streamlitDoc = window.parent.document;
         function sendSize() {
             const width = window.innerWidth;
-            const streamlitInput = streamlitDoc.querySelector('input[data-testid="viewport-size"]');
-            if (!streamlitInput) {
-                const input = streamlitDoc.createElement("input");
-                input.setAttribute("type", "hidden");
-                input.setAttribute("data-testid", "viewport-size");
-                input.setAttribute("id", "viewport-size");
-                input.setAttribute("value", width);
-                streamlitDoc.body.appendChild(input);
-                input.dispatchEvent(new Event("input", { bubbles: true }));
+            const input = streamlitDoc.querySelector('input[data-testid="viewport-size"]');
+            if (!input) {
+                const el = streamlitDoc.createElement("input");
+                el.setAttribute("type", "hidden");
+                el.setAttribute("data-testid", "viewport-size");
+                el.setAttribute("id", "viewport-size");
+                el.setAttribute("value", width);
+                streamlitDoc.body.appendChild(el);
+                el.dispatchEvent(new Event("input", { bubbles: true }));
             } else {
-                streamlitInput.value = width;
-                streamlitInput.dispatchEvent(new Event("input", { bubbles: true }));
+                input.value = width;
+                input.dispatchEvent(new Event("input", { bubbles: true }));
             }
         }
         window.onload = sendSize;
@@ -233,16 +233,14 @@ components.html("""
     </script>
 """, height=0)
 
-# Read viewport width from Streamlit's DOM
-viewport_width = st.experimental_get_query_params().get("viewport-size", [None])[0]
-if not viewport_width:
-    viewport_width = st.text_input("", value="", key="viewport-size", label_visibility="collapsed")
+# Hidden input to capture the viewport width
+viewport_width = st.text_input("viewport-size", value="", label_visibility="collapsed", key="viewport-size")
 
-# Display warning for narrow screens
-if viewport_width and viewport_width.isdigit() and int(viewport_width) < 800:
-    st.warning("📱 For best viewing, rotate your phone to **landscape** or enable **Desktop Site** from your browser settings.")
+# Show a warning if the screen is too narrow (e.g., mobile portrait)
+if viewport_width.isdigit() and int(viewport_width) < 800:
+    st.warning("📱 For best viewing, rotate your phone to **landscape** or enable **Desktop Site** in your browser.")
 
-# Center the chart using columns and constrain max width
+# Layout with padding columns
 left, main, right = st.columns([1, 6, 1])
 with main:
     st.plotly_chart(fig, use_container_width=False)
