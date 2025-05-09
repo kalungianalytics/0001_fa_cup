@@ -74,6 +74,7 @@ team_summary_text = {
 }
 '''
 team_summary_text = {
+    "Crystal Palace": "<b>Summary:</b> Most fans will be thrilled by a cup final appearance but will rue the poor home form and slow start to the season.",
     "Man City": """
     <b>Summary:</b> Poor season by <i>their</i> standards. Most fans will be disappointed.<br>
     <span style='line-height:1'><b>Lowest Pos:</b> 7th  <b>Final Pos:</b> 3rd  <b>Cup Finalist:</b> Yes</span>
@@ -96,7 +97,7 @@ def build_title_text(team):
         f"<b>{display_names[team]}</b> – "
         f"<span style='font-size: 16px;'>Position: {position} | "
         f"{total_points} Pts, {counts.get('Win', 0)} Wins, {counts.get('Draw', 0)} Draws, {counts.get('Defeat', 0)} Defeats</span>"
-        f"<br><span style='font-size:14px; color:lightgrey;'>{team_summary_text[team]}</span>"
+        f"<br><span style='font-size:14px; color:lightgrey;line-height:1.1'>{team_summary_text[team]}</span>"
     )
 
 # ==== Chart Prep ====
