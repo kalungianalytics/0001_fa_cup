@@ -196,7 +196,24 @@ fig.update_layout(
 # ==== Streamlit Display ====
 st.set_page_config(layout="wide")  # Force wide layout from the start
 
-st.warning("⚠️ Best viewed on desktop.📱 For the best mobile experience, enable **Desktop Site** in your browser menu and rotate to **landscape**.")
+if "show_warning" not in st.session_state:
+    st.session_state.show_warning = True
+
+if st.session_state.show_warning:
+    col1, col2 = st.columns([0.95, 0.05])
+    with col1:
+        st.markdown(
+            "<div style='text-align:center; color: red; font-size: 16px;'>"
+            "⚠️ Best viewed on desktop.📱 For the best mobile experience, enable **Desktop Site** in your browser menu and rotate to **landscape**."
+            "</div>",
+            unsafe_allow_html=True
+        )
+    with col2:
+        if st.button("❌"):
+            st.session_state.show_warning = False
+
+
+#st.warning("⚠️ Best viewed on desktop.📱 For the best mobile experience, enable **Desktop Site** in your browser menu and rotate to **landscape**.")
 
 # Center the chart with small padding on both sides (5% left/right, 90% center)
 main_col, right_col = st.columns([0.99, 0.01])
