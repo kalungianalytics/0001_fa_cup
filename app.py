@@ -98,9 +98,9 @@ def build_title_text(team):
 
     return (
         f"<b>{display_names[team]}</b> – "
-        f"Position: {position} | "
-        f"{total_points} Pts, {counts.get('Win', 0)} Wins, {counts.get('Draw', 0)} Draws, {counts.get('Defeat', 0)} Defeats"
-        f"<br>{team_summary_text[team]}"
+        f"<span style='font-size: 16px;'>Position: {position} | "
+        f"{total_points} Pts, {counts.get('Win', 0)} Wins, {counts.get('Draw', 0)} Draws, {counts.get('Defeat', 0)} Defeats</span>"
+        f"<br><span style='font-size:14px; color:lightgrey;'>{team_summary_text[team]}</span>"
     )
 
 # ==== Chart Prep ====
