@@ -33,6 +33,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,2,Arsenal,32,17,12,3,57,27,30,63,Draw
 33,2,Arsenal,33,18,12,3,61,27,34,66,Win
 34,2,Arsenal,34,18,13,3,63,29,34,67,Draw
+35,2,Arsenal,35,18,13,4,64,31,33,67,Defeat
+36,2,Arsenal,36,18,14,4,66,33,33,68,Draw
 1,5,Aston Villa,1,1,0,0,2,1,1,3,Win
 2,12,Aston Villa,2,1,0,1,2,3,-1,3,Defeat
 3,7,Aston Villa,3,2,0,1,4,4,0,6,Win
@@ -67,6 +69,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,7,Aston Villa,32,15,9,8,49,46,3,54,Win
 33,7,Aston Villa,33,16,9,8,53,47,6,57,Win
 34,7,Aston Villa,34,16,9,9,54,49,5,57,Defeat
+35,7,Aston Villa,35,17,9,9,55,49,6,60,Win
+36,6,Aston Villa,36,18,9,9,56,49,7,63,Win
 1,9,Bournemouth,1,0,1,0,1,1,0,1,Draw
 2,14,Bournemouth,2,0,2,0,2,2,0,2,Draw
 3,8,Bournemouth,3,1,2,0,5,4,1,5,Win
@@ -101,6 +105,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,8,Bournemouth,32,13,9,10,52,40,12,48,Win
 33,8,Bournemouth,33,13,10,10,52,40,12,49,Draw
 34,10,Bournemouth,34,13,11,10,53,41,12,50,Draw
+35,8,Bournemouth,35,14,11,10,55,42,13,53,Win
+36,10,Bournemouth,36,14,11,11,55,43,12,53,Defeat
 1,5,Brentford,1,1,0,0,2,1,1,3,Win
 2,12,Brentford,2,1,0,1,2,3,-1,3,Defeat
 3,6,Brentford,3,2,0,1,5,4,1,6,Win
@@ -135,6 +141,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,11,Brentford,32,12,7,13,52,48,4,43,Draw
 33,11,Brentford,33,13,7,13,56,50,6,46,Win
 34,11,Brentford,33,13,7,13,56,50,6,46,N/A
+35,9,Brentford,35,15,7,13,62,53,9,52,N/A
+36,8,Brentford,36,16,7,13,63,53,10,55,Win
 1,1,Brighton,1,1,0,0,3,0,3,3,Win
 2,2,Brighton,2,2,0,0,5,1,4,6,Win
 3,3,Brighton,3,2,1,0,6,2,4,7,Draw
@@ -169,6 +177,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,10,Brighton,32,12,12,8,51,49,2,48,Draw
 33,10,Brighton,33,12,12,9,53,53,0,48,Defeat
 34,9,Brighton,34,13,12,9,56,55,1,51,Win
+35,10,Brighton,35,13,13,9,57,56,1,52,Draw
+36,9,Brighton,36,14,13,9,59,56,3,55,Win
 1,17,Chelsea,1,0,0,1,0,2,-2,0,Defeat
 2,8,Chelsea,2,1,0,1,6,4,2,3,Win
 3,11,Chelsea,3,1,1,1,7,5,2,4,Draw
@@ -203,6 +213,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,6,Chelsea,32,15,9,8,56,39,17,54,Draw
 33,6,Chelsea,33,16,9,8,58,40,18,57,Win
 34,5,Chelsea,34,17,9,8,59,40,19,60,Win
+35,5,Chelsea,35,18,9,8,62,41,21,63,Win
+36,5,Chelsea,36,18,9,9,62,43,19,63,Defeat
 1,13,Crystal Palace,1,0,0,1,1,2,-1,0,Defeat
 2,17,Crystal Palace,2,0,0,2,1,4,-3,0,Defeat
 3,16,Crystal Palace,3,0,1,2,2,5,-3,1,Draw
@@ -237,6 +249,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,12,Crystal Palace,32,11,10,11,41,45,-4,43,Defeat
 33,12,Crystal Palace,33,11,11,11,41,45,-4,44,Draw
 34,12,Crystal Palace,34,11,12,11,43,47,-4,45,Draw
+35,12,Crystal Palace,35,11,13,11,44,48,-4,46,Draw
+36,12,Crystal Palace,36,12,13,11,46,48,-2,49,Win
 1,20,Everton,1,0,0,1,0,3,-3,0,Defeat
 2,20,Everton,2,0,0,2,0,7,-7,0,Defeat
 3,20,Everton,3,0,0,3,2,10,-8,0,Defeat
@@ -271,6 +285,10 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,13,Everton,32,8,14,10,34,38,-4,38,Win
 33,13,Everton,33,8,14,11,34,40,-6,38,Defeat
 34,15,Everton,34,8,14,12,34,41,-7,38,Defeat
+35,14,Everton,35,8,15,12,36,43,-7,39,Draw
+36,13,Everton,36,9,15,12,39,44,-5,42,Win
+35,6,Forest,35,18,7,10,54,42,12,61,N/A
+36,7,Forest,36,18,8,10,56,44,12,62,Draw
 1,15,Fulham,1,0,0,1,0,1,-1,0,Defeat
 2,10,Fulham,2,1,0,1,2,2,0,3,Win
 3,12,Fulham,3,1,1,1,3,3,0,4,Draw
@@ -305,6 +323,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,9,Fulham,32,13,9,10,47,43,4,48,Defeat
 33,9,Fulham,33,13,9,11,48,45,3,48,Defeat
 34,8,Fulham,34,14,9,11,50,46,4,51,Win
+35,11,Fulham,35,14,9,12,50,47,3,51,Defeat
+36,11,Fulham,36,14,9,13,51,50,1,51,Defeat
 1,17,Ipswich,1,0,0,1,0,2,-2,0,Defeat
 2,18,Ipswich,2,0,0,2,1,6,-5,0,Defeat
 3,17,Ipswich,3,0,1,2,2,7,-5,1,Draw
@@ -339,6 +359,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,18,Ipswich,32,4,9,19,33,67,-34,21,Draw
 33,18,Ipswich,33,4,9,20,33,71,-38,21,Defeat
 34,18,Ipswich,34,4,9,21,33,74,-41,21,Defeat
+35,18,Ipswich,35,4,10,21,35,76,-41,22,Draw
+36,18,Ipswich,36,4,10,22,35,77,-42,22,Defeat
 1,9,Leicester,1,0,1,0,1,1,0,1,Draw
 2,15,Leicester,2,0,1,1,2,3,-1,1,Defeat
 3,15,Leicester,3,0,1,2,3,5,-2,1,Defeat
@@ -373,6 +395,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,19,Leicester,32,4,6,22,27,72,-45,18,Draw
 33,19,Leicester,33,4,6,23,27,73,-46,18,Defeat
 34,19,Leicester,34,4,6,24,27,76,-49,18,Defeat
+35,19,Leicester,35,5,6,24,29,76,-47,21,Win
+36,19,Leicester,36,5,7,24,31,78,-47,22,Draw
 1,2,Liverpool,1,1,0,0,2,0,2,3,Win
 2,3,Liverpool,2,2,0,0,4,0,4,6,Win
 3,2,Liverpool,3,3,0,0,7,0,7,9,Win
@@ -407,6 +431,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,1,Liverpool,32,23,7,2,74,31,43,76,Win
 33,1,Liverpool,33,24,7,2,75,31,44,79,Win
 34,1,Liverpool,34,25,7,2,80,32,48,82,Win
+35,1,Liverpool,35,25,7,3,81,35,46,82,Defeat
+36,1,Liverpool,36,25,8,3,83,37,46,83,Draw
 1,2,Man City,1,1,0,0,2,0,2,3,Win
 2,1,Man City,2,2,0,0,6,1,5,6,Win
 3,1,Man City,3,3,0,0,9,2,7,9,Win
@@ -441,6 +467,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,5,Man City,32,16,7,9,62,42,20,55,Win
 33,5,Man City,33,17,7,9,64,42,22,58,Win
 34,4,Man City,34,18,7,9,66,43,23,61,Win
+35,3,Man City,35,19,7,9,67,43,24,64,Win
+36,4,Man City,36,19,8,9,67,43,24,65,Draw
 1,7,Man Utd,1,1,0,0,1,0,1,3,Win
 2,10,Man Utd,2,1,0,1,2,2,0,3,Defeat
 3,14,Man Utd,3,1,0,2,2,5,-3,3,Defeat
@@ -475,6 +503,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,14,Man Utd,32,10,8,14,38,45,-7,38,Defeat
 33,14,Man Utd,33,10,8,15,38,46,-8,38,Defeat
 34,14,Man Utd,34,10,9,15,39,47,-8,39,Draw
+35,15,Man Utd,35,10,9,16,42,51,-9,39,Defeat
+36,16,Man Utd,36,10,9,17,42,53,-11,39,Defeat
 1,7,Newcastle,1,1,0,0,1,0,1,3,Win
 2,6,Newcastle,2,1,1,0,2,1,1,4,Draw
 3,5,Newcastle,3,2,1,0,4,2,2,7,Win
@@ -509,6 +539,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,3,Newcastle,32,18,5,9,61,40,21,59,Win
 33,4,Newcastle,33,18,5,10,62,44,18,59,Defeat
 34,3,Newcastle,34,19,5,10,65,44,21,62,Win
+35,4,Newcastle,35,19,6,10,66,45,21,63,Draw
+36,3,Newcastle,36,20,6,10,68,45,23,66,Win
 1,9,Nottm Forest,1,0,1,0,1,1,0,1,Draw
 2,6,Nottm Forest,2,1,1,0,2,1,1,4,Win
 3,9,Nottm Forest,3,1,2,0,3,2,1,5,Draw
@@ -577,6 +609,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,20,Southampton,32,2,4,26,23,77,-54,10,Defeat
 33,20,Southampton,33,2,5,26,24,78,-54,11,Draw
 34,20,Southampton,34,2,5,27,25,80,-55,11,Defeat
+35,20,Southampton,35,2,5,28,25,82,-57,11,Defeat
+36,20,Southampton,36,2,6,28,25,82,-57,12,Draw
 1,9,Tottenham,1,0,1,0,1,1,0,1,Draw
 2,5,Tottenham,2,1,1,0,5,1,4,4,Win
 3,10,Tottenham,3,1,1,1,6,3,3,4,Defeat
@@ -611,6 +645,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,15,Tottenham,32,11,4,17,60,49,11,37,Defeat
 33,16,Tottenham,33,11,4,18,61,51,10,37,Defeat
 34,16,Tottenham,34,11,4,19,62,56,6,37,Defeat
+35,16,Tottenham,35,11,5,19,63,57,6,38,Draw
+36,17,Tottenham,36,11,5,20,63,59,4,38,Defeat
 1,13,West Ham,1,0,0,1,1,2,-1,0,Defeat
 2,9,West Ham,2,1,0,1,3,2,1,3,Win
 3,13,West Ham,3,1,0,2,4,5,-1,3,Defeat
@@ -645,6 +681,8 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,17,West Ham,32,9,8,15,36,54,-18,35,Defeat
 33,17,West Ham,33,9,9,15,37,55,-18,36,Draw
 34,17,West Ham,34,9,9,16,39,58,-19,36,Defeat
+35,17,West Ham,35,9,10,16,40,59,-19,37,Draw
+36,15,West Ham,36,10,10,16,42,59,-17,40,Win
 1,17,Wolves,1,0,0,1,0,2,-2,0,Defeat
 2,19,Wolves,2,0,0,2,2,8,-6,0,Defeat
 3,18,Wolves,3,0,1,2,3,9,-6,1,Draw
@@ -679,3 +717,5 @@ Matchweek,Position,Club,Matches,Wins,Draws,Losses,GoalsFor,GoalsAgainst,GoalDiff
 32,16,Wolves,32,10,5,17,47,61,-14,35,Win
 33,15,Wolves,33,11,5,17,48,61,-13,38,Win
 34,13,Wolves,34,12,5,17,51,61,-10,41,Win
+35,13,Wolves,35,12,5,18,51,62,-11,41,Defeat
+36,14,Wolves,36,12,5,19,51,64,-13,41,Defeat
